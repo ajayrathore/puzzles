@@ -1,0 +1,9 @@
+target/
+*/src/test/java/
+.java-version
+.DS_Store
+.idea/
+*.iml
+*.project
+*.classpath
+*.settings/
