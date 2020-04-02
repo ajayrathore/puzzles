@@ -20,7 +20,7 @@
 
 // 2 - Duplicity
 // One is the loneliest number. Given a string x, produce a list of characters which appear more than once in x.
-&1<#:'="applause"
+{&1<#:'=x}"applause"
 "ap"
 
 
@@ -29,7 +29,6 @@
 // Given strings x and y, do both strings contain the same letters, possibly in a different order?
 ('[{~/x@'<:'x};(;)])["listen";"silent"]
 1b
-
 // Other fun way to do it
 ('[{~/r@\:!*r:#:''=:'x};(;)])["listen";"silent"]
 1b
