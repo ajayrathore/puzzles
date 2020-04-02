@@ -6,7 +6,7 @@
 // 0 - Multiplicity
 // Characters are expensive, and the accountants tell me we can’t hand them out willy-nilly anymore. Given a string x and a character y,
 // how many times does y occur in x?
-{+/x=y}["mississippi";"s"]
+(+/=)["mississippi";"s"]
 4i
 //Another way
 {#:(=x)y}["mississippi";"s"]
@@ -32,7 +32,8 @@
 // Other fun way to do it
 ('[{~/r@\:!*r:#:''=:'x};(;)])["listen";"silent"]
 1b
-
+{&/=/#:''=:'(x;y)}["listen";"silent"]
+1b
 
 // 4 - Precious Snowflakes
 // It’s virtuous to be unique, just like everyone else. Given a string x,
@@ -48,6 +49,8 @@
 // Strings work the same way. Given strings x and y, is x a rotation of the characters in y?
 {1=+/y~/:{,/|0 1 _ x}\x}["foobar";"barfoo"]
 1b
+{y in(,/|0 1_)\x}["foobar";"barfoo"]
+1b
 
 // 6 - Size Matters
 // Sometimes small things come first. Given a list of strings x, sort the strings by length, ascending.
@@ -62,7 +65,7 @@
 {*>#:'=x}"abdbbac"
 "b"
 //Find all characters
-{&x=max@x:#:'=x}"CCCBBBBAAAA"
+{&x=max x:#:'=x}"CCCBBBBAAAA"
 "BA"
 
 
@@ -85,6 +88,8 @@
 // Wait, strike that- reverse it. Given a string x and a boolean vector y,
 // spread the characters of x to the positions of 1s in y, filling intervening characters with underscores.
 {@[;&y;:;x]#[;"_"]@#:y}["fbr";1 0 0 1 0 1]
+"f__b_r"
+{"_"^x@<>y}["fbr";1 0 0 1 0 1]
 "f__b_r"
 
 
@@ -112,4 +117,6 @@
 // Given a string x, generate a list of all possible reorderings of the characters in x.
 // Can you do this non-recursively?
 {(1 0#x){,/{,/|0 1 _ x}\'x,'y}/x}"xyz"
+("xyz";"yzx";"zxy";"yxz";"xzy";"zyx")
+{(1 0#x)(,/(,/|0 1_)\',')/x}"xyz"
 ("xyz";"yzx";"zxy";"yxz";"xzy";"zyx")
