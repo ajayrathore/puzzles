@@ -8,6 +8,9 @@
 // how many times does y occur in x?
 {+/x=y}["mississippi";"s"]
 4i
+//Another way
+{#:(=x)y}["mississippi";"s"]
+4
 
 // 1 - Trapeze Part
 // Sometimes I try reading sentences right-to-left to make my life more exciting. Results have been mixed.
@@ -24,11 +27,11 @@
 // 3 - Sort Yourself Out
 // Alphabetical filing systems are passe. It’s far more Zen to organize words by their histograms!
 // Given strings x and y, do both strings contain the same letters, possibly in a different order?
-{~/r@'<:'r:(x;y)}["listen";"silent"]
+('[{~/x@'<:'x};(;)])["listen";"silent"]
 1b
 
-For fun
-{~/r@\:!*r:#:''=:'(x;y)}["listen";"silent"]
+// Other fun way to do it
+('[{~/r@\:!*r:#:''=:'x};(;)])["listen";"silent"]
 1b
 
 
@@ -59,8 +62,7 @@ For fun
 // If more than one character occurs the same number of times, you may choose arbitrarily. Is it harder to find all such characters?
 {*>#:'=x}"abdbbac"
 "b"
-
-Find all characters
+//Find all characters
 {&x=max@x:#:'=x}"CCCBBBBAAAA"
 "BA"
 
