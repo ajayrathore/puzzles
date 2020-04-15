@@ -6,16 +6,13 @@ sudoku:{[BOARD]
     row_col: firstNull[BOARD];
     board:  {$[2=count x; x[1]<=count x 0; 0b]}
             {[rc;l]
-                b: .[l 0;rc;:;l 1];
-                if[validSoFar b;
+                if[validSoFar b: .[;rc;:;]/[l];
                     result: sudoku b;
                     if[isComplete result;
                         :result
                     ];
                 ];
-                l[0]: .[l 0;rc;:;0N];
-                l[1]: l[1]+1;
-                l
+                @[l;1;+;1]
             }[row_col]/(BOARD;1);
     $[2=count board; first board; board]
     };
