@@ -47,7 +47,7 @@
 // is sent to the back of the line of char and takes the place of the first char.
 // The formerly first char becomes the second, the second becomes the third, and the fourth falls off the cliff.
 // Strings work the same way. Given strings x and y, is x a rotation of the characters in y?
-{1=+/y~/:{,/|0 1 _ x}\x}["foobar";"barfoo"]
+{y in{,/|0 1 _ x}\x}["foobar";"barfoo"]
 1b
 {y in(,/|0 1_)\x}["foobar";"barfoo"]
 1b
