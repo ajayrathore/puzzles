@@ -33,7 +33,7 @@ validSoFar:{[BOARD]
     };
 
 
-rowsValid:{[BOARD] all {x~distinct x:x except 0N}each BOARD    };
+rowsValid:{[BOARD] all uniqExceptNull each BOARD    };
 
 
 colsValid:{[BOARD] rowsValid flip BOARD};
@@ -42,10 +42,13 @@ colsValid:{[BOARD] rowsValid flip BOARD};
 blocksValid:{[BOARD]
     e: count BOARD;
     bs: `long$sqrt e;
-    indexes: raze (bs cut til e) cross\:/: bs cut til e;
+    indexes: raze l cross\:/: l: bs cut til e;
     blocks: .[BOARD]''[indexes];
-    all {x:x except 0N; x~distinct x}each blocks
+    all uniqExceptNull each blocks
     };
+
+
+uniqExceptNull: {x~distinct x:x except 0N}
 
 
 
