@@ -1,5 +1,5 @@
 
-//sudoku solver - recursion plus backtracking
+//sudoku solver - backtracking
 
 sudoku:{[BOARD]
     if[isComplete BOARD; :BOARD];
